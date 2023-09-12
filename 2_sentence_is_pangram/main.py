@@ -10,9 +10,6 @@ pytest ./2_sentence_is_pangram/test.py
 
 def is_sentence_is_pangram(sentence: str) -> bool:
 
-    a = [1,2,3]
-    b = 1+ 2
-
     alphabet = "abcdefghijklmnopqrstuvwxyz"
 
     sentence = sentence.lower()
