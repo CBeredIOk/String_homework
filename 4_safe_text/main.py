@@ -45,27 +45,28 @@ def get_wrong_article() -> str:
 
 
 def recover_article() -> str:
-    wrong_article = get_wrong_article()
 
+    wrong_article = get_wrong_article()
     sentences = wrong_article.split(".")
 
-    for i in range(len(sentences) - 1):
-        sentences[i] = sentences[i].replace("!", "")
-        sentences[i] = sentences[i][::-1]
-        sentences[i] = sentences[i].lower()
+    i = 0
+    for sentence in sentences:
 
-        sentences_n = sentences[i].split("\n")
-        sentences[i] = sentences_n[0]
+        length = int(len(sentence)/2)
+        sentence = sentence.replace("!", "", length)
 
-        sentences[i] = sentences[i].replace("woof-woofs", "cats")
-        if i == 0:
-            sentences[i] = sentences[i].replace("domestiwoof-woofed", "domesticated")
+        sentence = sentence[::-1]
+        sentence = sentence.lower()
 
-        sentences[i] = sentences[i].capitalize()
+        sentences_n = sentence.split("\n")
+        sentence = sentences_n[0]
 
-        if i != 0:
-            sentences[i] = "\n" + sentences[i]
+        sentence = sentence.replace("woof-woof", "cat")
+        sentence = sentence.capitalize()
 
-    wrong_article = ".".join(sentences)
+        sentences[i] = sentence
+        i += 1
 
-    return wrong_article
+    revised_article = ".\n".join(sentences)
+
+    return revised_article

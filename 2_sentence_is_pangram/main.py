@@ -10,17 +10,5 @@ pytest ./2_sentence_is_pangram/test.py
 
 def is_sentence_is_pangram(sentence: str) -> bool:
 
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-
-    sentence = sentence.lower()
-
-    cut_sentence = list(set(sentence))
-
-    cut_sentence.sort()
-
-    str_list = "".join(cut_sentence)
-
-    if str_list == alphabet:
-        return True
-    else:
-        return False
+    is_pangram = (len(set(sentence.lower())) == 26)
+    return is_pangram
