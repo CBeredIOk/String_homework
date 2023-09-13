@@ -17,6 +17,4 @@ def is_array_string_are_equal(array_string_1: list[str], array_string_2: list[st
     string_1 = "".join(array_string_1).lower()
     string_2 = "".join(array_string_2).lower()
 
-    bool_equal = string_1 == string_2
-
-    return bool_equal
+    return string_1 == string_2

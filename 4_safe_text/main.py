@@ -54,13 +54,11 @@ def recover_article() -> str:
     for sentence in sentences:
 
         length = int(len(sentence)/2)
-        sentence = sentence.replace("!", "", length)
+
+        sentence = sentence[:length] + sentence[length:].replace('!', '')
 
         sentence = sentence[::-1]
         sentence = sentence.lower()
-
-        sentences_n = sentence.split("\n")
-        sentence = sentences_n[0]
 
         sentence = sentence.replace("woof-woof", "cat")
         sentence = sentence.capitalize()

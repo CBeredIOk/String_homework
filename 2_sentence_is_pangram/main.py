@@ -6,9 +6,11 @@
 Проверка:
 pytest ./2_sentence_is_pangram/test.py
 """
+import string
 
 
 def is_sentence_is_pangram(sentence: str) -> bool:
 
-    is_pangram = (len(set(sentence.lower())) == 26)
-    return is_pangram
+    alphabet_length = len(string.ascii_lowercase)
+
+    return len(set(sentence.lower())) == alphabet_length
