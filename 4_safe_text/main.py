@@ -47,7 +47,7 @@ def get_wrong_article() -> str:
 def recover_article() -> str:
 
     wrong_article = get_wrong_article()
-    sentences = wrong_article.split(".")
+    sentences = wrong_article.split(SPLIT_SYMBOL)
 
     copy_sentences = []
 
@@ -67,6 +67,6 @@ def recover_article() -> str:
 
         copy_sentences.append(sentence)
 
-    revised_article = ".\n".join(copy_sentences)
+    revised_article = SPLIT_SYMBOL.join(copy_sentences)
 
     return revised_article
