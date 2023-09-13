@@ -49,7 +49,8 @@ def recover_article() -> str:
     wrong_article = get_wrong_article()
     sentences = wrong_article.split(".")
 
-    i = 0
+    copy_sentences = []
+
     for sentence in sentences:
 
         length = int(len(sentence)/2)
@@ -64,9 +65,8 @@ def recover_article() -> str:
         sentence = sentence.replace("woof-woof", "cat")
         sentence = sentence.capitalize()
 
-        sentences[i] = sentence
-        i += 1
+        copy_sentences.append(sentence)
 
-    revised_article = ".\n".join(sentences)
+    revised_article = ".\n".join(copy_sentences)
 
     return revised_article

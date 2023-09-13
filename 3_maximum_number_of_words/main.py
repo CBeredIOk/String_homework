@@ -11,12 +11,11 @@ pytest ./3_maximum_number_of_words/test.py
 
 def get_max_number_of_words_from_sentences(sentences: list[str]) -> int:
 
-    count_words = 0
     max_words = 0
 
     for sentence in sentences:
         words = sentence.split()
-        if len(words) > count_words:
+        if len(words) > max_words:
             max_words = len(words)
 
     return max_words
